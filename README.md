@@ -1,15 +1,16 @@
-# Image Downscaler CLI
+# Images Downscaler CLI
 
 ## Description
 
-This CLI tool/script allows you to select a folder that may contain any number of nested folders and images within them. The script downscales the images based on size, ensuring that the maximum file size is below 1.5 MB while maintaining the original aspect ratio and quality as much as possible. The processed images are saved with the same folder structure and filenames but in a different parent folder.
+This CLI tool/script allows you to select a folder that may contain any number of nested folders and images within them. The script downscales the images either based on size (e.g., ensuring that the maximum file size is below 1.5 MB) or based on resolution (e.g., resizing images to a specific width and height). The processed images are saved with the same folder structure and filenames but in a different parent folder. The script also features detailed logging to track the processing of each image.
 
 ## Features
 
 - Recursively scans a directory and all its nested subdirectories for images.
-- Downscales images to ensure they do not exceed a specified size limit (default: 1.2 MB).
+- Downscales images based on size (default: 1.5 MB) or resolution while maintaining the original aspect ratio.
 - Maintains the original folder structure and filenames for the processed images.
 - Supports common image formats like JPEG and PNG.
+- Detailed logging of the processing steps, including errors, warnings, and file details.
 
 ## Requirements
 
@@ -21,117 +22,81 @@ This CLI tool/script allows you to select a folder that may contain any number o
 This script relies on the following npm packages:
 
 - `sharp`: An advanced image processing library for Node.js.
+- `inquirer`: A library for creating interactive command-line interfaces.
+- `winston`: A versatile logging library for Node.js.
 - `fs` and `path`: Built-in Node.js modules for interacting with the file system and handling file paths.
 
 To install the required npm packages, use the following command:
 
-`npm install sharp`
+```bash
+npm install
+```
 
 ## Installation
 
 1.Clone this repository to your local machine:
 
-    bash
+bash
 
-    Copy code
+Copy code
 
-    `git clone https://github.com/MUNYYBY/images-downscaler-cli.git`
+`git clone https://github.com/MUNYYBY/images-downscaler-cli.git`
 
 2.Navigate to the directory:
 
-    bash
+bash
 
-    Copy code
+Copy code
 
-    `cd images-downscaler-cli`
+`cd image-downscaler-cli`
 
 3.Install the dependencies:
 
-    bash
+bash
 
-    Copy code
+Copy code
 
-    `npm install`
+`npm install`
 
 ## Usage
 
-1.Prepare Your Directories:
+1.**Prepare Your Directories:**
 
-    - Place the images you want to downscale in a parent folder.
-    - Create a separate folder where you want the processed images to be saved.
+- Place the images you want to downscale in a parent folder. - Create a separate folder where you want the processed images to be saved.
 
-2.Configure the Script:
+  2.**Run the Script:**
 
-        - Open the script file (`index.js`) in a text editor.
-        - Update the `inputDir` variable with the path to your parent folder containing the images.
-        - Update the `outputDir` variable with the path to the folder where you want to save the downscaled images.
+- Execute the script using Node.js:
 
-        Example:
+  bash
 
-        javascript
+  Copy code
 
-        Copy code
+  `node script.mjs`
 
-        `const inputDir = path.join(__dirname, 'PATH_TO_IMAGES'); // Replace with your parent folder path
+  The script will prompt you to provide the following information:
 
-    const outputDir = path.join(\_\_dirname, 'OUTPUT_PATH'); // Replace with your desired output folder path`
+- The path to the parent folder containing the images.
+- The path to the output folder where processed images will be saved.
+- Whether you want to downscale the images by size or by resolution.
+- If by size, the maximum file size in MB.
+- If by resolution, the maximum width and height.
 
-3.Run the Script:
+The script will then recursively scan the specified parent folder, downscale any images found, and save them in the designated output folder with the same structure and filenames.
 
-    - Execute the script using Node.js:
+3.**Check the Output:**
 
-    bash
+After the script completes, navigate to the output folder to verify that the images have been successfully downscaled and saved.
 
-    Copy code
+4.**Review the Logs:**
 
-    `node index.js`
-
-    The script will recursively scan the specified parent folder, downscale any images found, and save them in the designated output folder with the same structure and filenames.
-
-4.Check the Output:
-
-    - After the script completes, navigate to the output folder to verify that the images have been successfully downscaled and saved.
-
-## Example
-
-Suppose you have the following folder structure:
-
-Copy code
-
-`parent_folder/
-│
-├── subfolder1/
-│   ├── image1.jpg
-│   └── image2.png
-│
-├── subfolder2/
-│   ├── subsubfolder1/
-│   │   └── image3.jpg
-│   └── image4.png
-└── image5.jpg`
-
-After running the script, if you set the `outputDir` to `downscaled_images/`, you will get:
-
-Copy code
-
-`downscaled_images/
-│
-├── subfolder1/
-│   ├── image1.jpg
-│   └── image2.png
-│
-├── subfolder2/
-│   ├── subsubfolder1/
-│   │   └── image3.jpg
-│   └── image4.png
-└── image5.jpg`
-
-The images will be downscaled but will retain their original names and directory structure.
+Check the console for real-time logs or refer to the `image-downscaler.log` file for detailed logs of the processing.
 
 ## Notes
 
 - The script will attempt to reduce image size by adjusting quality until the file size is below the specified limit.
 - It's recommended to test the script on a smaller set of images before processing a large directory.
+- Detailed logs are available both in the console and in the `image-downscaler.log` file for troubleshooting and record-keeping.
 
 ## License
 
@@ -144,3 +109,25 @@ Feel free to open issues or submit pull requests if you would like to contribute
 ## Contact
 
 For any questions or issues, please open an issue on the GitHub repository or contact the maintainer directly.
+
+markdown
+
+Copy code
+
+`### Key Updates:
+
+1. **Usage Instructions**:
+
+The updated instructions reflect the dynamic prompts that the script now uses to collect user inputs.
+
+2.**Logging Information**:
+
+The `Usage` and `Notes` sections now include details about the logging feature, advising users to check the logs for more information on the processing.
+
+3.**Dependencies**:
+
+The `winston` package has been added to the list of dependencies, and installation instructions have been updated accordingly.
+
+4.**Execution**:
+
+- The instructions now mention the script's file name (`script.mjs`) assuming the script is saved with this name to follow the ECMAScript Module format.`
