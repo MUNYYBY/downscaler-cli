@@ -35,7 +35,7 @@ To install the required npm packages, use the following command:
 
     Copy code
 
-    `git clone https://github.com/yourusername/image-downscaler-cli.git`
+    `git clone https://github.com/MUNYYBY/images-downscaler-cli.git`
 
 2.Navigate to the directory:
 
@@ -43,7 +43,7 @@ To install the required npm packages, use the following command:
 
     Copy code
 
-    `cd image-downscaler-cli`
+    `cd images-downscaler-cli`
 
 3.Install the dependencies:
 
@@ -62,7 +62,7 @@ To install the required npm packages, use the following command:
 
 2.Configure the Script:
 
-        - Open the script file (`index.js` or similar) in a text editor.
+        - Open the script file (`index.js`) in a text editor.
         - Update the `inputDir` variable with the path to your parent folder containing the images.
         - Update the `outputDir` variable with the path to the folder where you want to save the downscaled images.
 
@@ -72,9 +72,9 @@ To install the required npm packages, use the following command:
 
         Copy code
 
-        `const inputDir = path.join(__dirname, 'path_to_parent_folder'); // Replace with your parent folder path
+        `const inputDir = path.join(__dirname, 'PATH_TO_IMAGES'); // Replace with your parent folder path
 
-    const outputDir = path.join(\_\_dirname, 'output_folder'); // Replace with your desired output folder path`
+    const outputDir = path.join(\_\_dirname, 'OUTPUT_PATH'); // Replace with your desired output folder path`
 
 3.Run the Script:
 

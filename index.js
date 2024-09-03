@@ -2,8 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 
-const inputDir = path.join(__dirname, "./rooms"); // replace with your parent folder path
-const outputDir = path.join(__dirname, "./output"); // replace with your desired output folder path
+const inputDir = path.join(__dirname, "PATH_TO_IMAGES"); // replace with your parent folder path
+const outputDir = path.join(__dirname, "OUTPUT_PATH"); // replace with your desired output folder path
 
 const maxSizeInBytes = 1.2 * 1024 * 1024; // Maximum file size: 1.2 MB
 
