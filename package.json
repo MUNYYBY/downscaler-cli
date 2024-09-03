@@ -16,5 +16,10 @@
     "path": "^0.12.7",
     "sharp": "^0.33.5",
     "winston": "^3.14.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^22.5.2",
+    "typescript": "^5.5.4"
   }
 }

@@ -2,11 +2,11 @@ import sharp from "sharp";
 import { logger } from "./Logging.js";
 
 export const downscaleByResolution = async (
-  srcPath,
-  destPath,
-  maxWidth,
-  maxHeight
-) => {
+  srcPath: string,
+  destPath: string,
+  maxWidth: number,
+  maxHeight: number
+): Promise<void> => {
   try {
     logger.info(`Downscaling by resolution: ${srcPath}`);
     await sharp(srcPath)
@@ -17,6 +17,6 @@ export const downscaleByResolution = async (
       .toFile(destPath);
     logger.info(`Processed and saved: ${destPath}`);
   } catch (err) {
-    logger.error(`Error processing file ${srcPath}: ${err.message}`);
+    logger.error(`Error processing file ${srcPath}: ${(err as Error).message}`);
   }
 };
