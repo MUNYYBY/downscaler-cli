@@ -1,5 +1,5 @@
 {
-  "name": "images-converter-dir-wise",
+  "name": "images-downscaler-cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
