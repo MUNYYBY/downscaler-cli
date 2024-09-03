@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "fs": "^0.0.1-security",
+    "inquirer": "^10.2.0",
     "path": "^0.12.7",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "winston": "^3.14.2"
   }
 }
