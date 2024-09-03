@@ -110,24 +110,3 @@ Feel free to open issues or submit pull requests if you would like to contribute
 
 For any questions or issues, please open an issue on the GitHub repository or contact the maintainer directly.
 
-markdown
-
-Copy code
-
-`### Key Updates:
-
-1. **Usage Instructions**:
-
-The updated instructions reflect the dynamic prompts that the script now uses to collect user inputs.
-
-2.**Logging Information**:
-
-The `Usage` and `Notes` sections now include details about the logging feature, advising users to check the logs for more information on the processing.
-
-3.**Dependencies**:
-
-The `winston` package has been added to the list of dependencies, and installation instructions have been updated accordingly.
-
-4.**Execution**:
-
-- The instructions now mention the script's file name (`script.mjs`) assuming the script is saved with this name to follow the ECMAScript Module format.`
