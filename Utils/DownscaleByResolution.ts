@@ -1,11 +1,11 @@
-import sharp from "sharp";
-import { logger } from "./Logging.js";
+import sharp from 'sharp';
+import { logger } from './Logging.js';
 
 export const downscaleByResolution = async (
   srcPath: string,
   destPath: string,
   maxWidth: number,
-  maxHeight: number
+  maxHeight: number,
 ): Promise<void> => {
   try {
     logger.info(`Downscaling by resolution: ${srcPath}`);

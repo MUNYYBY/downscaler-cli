@@ -1,12 +1,12 @@
-import fs from "fs";
-import sharp from "sharp";
-import { logger } from "./Logging.js";
+import fs from 'fs';
+import sharp from 'sharp';
+import { logger } from './Logging.js';
 
 export const downscaleBySize = async (
   srcPath: string,
   destPath: string,
   maxSizeInBytes: number,
-  quality: number = 80
+  quality: number = 80,
 ): Promise<void> => {
   try {
     logger.info(`Downscaling by size: ${srcPath}`);
@@ -16,7 +16,7 @@ export const downscaleBySize = async (
       logger.warn(
         `File size exceeds ${maxSizeInBytes} bytes. Reducing quality to ${
           quality - 10
-        }% and retrying...`
+        }% and retrying...`,
       );
       await downscaleBySize(srcPath, destPath, maxSizeInBytes, quality - 10);
     } else {
@@ -26,7 +26,7 @@ export const downscaleBySize = async (
           data.length /
           1024 /
           1024
-        ).toFixed(2)} MB)`
+        ).toFixed(2)} MB)`,
       );
     }
   } catch (err) {

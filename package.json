@@ -1,17 +1,19 @@
 {
   "name": "images-downscaler-cli",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Downscales images on every nested level inside a directory and saves them in same dir structure",
+  "main": "index.ts",
   "type": "module",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "munyyby",
   "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "start": "NODE_OPTIONS='--experimental-specifier-resolution=node' node dist/index.js",
+    "lint": "eslint './**/*.ts'",
+    "format": "prettier --write './**/*.ts'",
+    "dev": "npm run build && npm start"
+  },
   "dependencies": {
-    "fs": "^0.0.1-security",
     "inquirer": "^10.2.0",
     "path": "^0.12.7",
     "sharp": "^0.33.5",
@@ -20,6 +22,10 @@
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
     "@types/node": "^22.5.2",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.4"
   }
 }
