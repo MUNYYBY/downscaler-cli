@@ -36,25 +36,13 @@ npm install
 
 1.Clone this repository to your local machine:
 
-bash
-
-Copy code
-
 `git clone https://github.com/MUNYYBY/images-downscaler-cli.git`
 
 2.Navigate to the directory:
 
-bash
-
-Copy code
-
 `cd image-downscaler-cli`
 
 3.Install the dependencies:
-
-bash
-
-Copy code
 
 `npm install`
 
@@ -68,18 +56,14 @@ Copy code
 
 - Execute the script using Node.js:
 
-  bash
-
-  Copy code
-
-  `node script.mjs`
+  `npm start`
 
   The script will prompt you to provide the following information:
 
 - The path to the parent folder containing the images.
 - The path to the output folder where processed images will be saved.
 - Whether you want to downscale the images by size or by resolution.
-- If by size, the maximum file size in MB.
+- If by size, the maximum file size is in MB.
 - If by resolution, the maximum width and height.
 
 The script will then recursively scan the specified parent folder, downscale any images found, and save them in the designated output folder with the same structure and filenames.
@@ -90,7 +74,7 @@ After the script completes, navigate to the output folder to verify that the ima
 
 4.**Review the Logs:**
 
-Check the console for real-time logs or refer to the `image-downscaler.log` file for detailed logs of the processing.
+Check the console for real-time logs, or refer to the `image-downscaler.log` file for detailed processing logs.
 
 ## Notes
 
